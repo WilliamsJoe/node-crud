@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const DB_URL = 'mongodb://' + encodeURIComponent(process.env.DB_USER) + ':' + encodeURIComponent(process.env.DB_PW) + process.env.DB_HOST;
+const DB_URL = `mongodb://${encodeURIComponent(process.env.DB_USER)}:${encodeURIComponent(process.env.DB_PW)}${process.env.DB_HOST}/${process.env.DB_NAME}`;
 const mongoDB = process.env.MONGODB_URI || DB_URL;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
